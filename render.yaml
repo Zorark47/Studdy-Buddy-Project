@@ -1,18 +1,18 @@
 databases:
-  - name: studdy-buddy
-    databaseName: studdy-buddy
-    user: studdy-buddy
+  - name: studdybuddy
+    databaseName: studdybuddy
+    user: studdybuddy
 
 services:
   - type: web
-    name: studdy-buddy
+    name: studdybuddy
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn studdy-buddy.wsgi:application"
+    startCommand: "gunicorn studdybuddy.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: studdy-buddy
+          name: studdybuddy
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
