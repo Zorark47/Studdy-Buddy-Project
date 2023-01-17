@@ -62,6 +62,7 @@ SECURE_SSL_REDIRECT = False ## CHANGE BACK TO TRUE BEFORE PUSH
 
 INSTALLED_APPS = [
     'bootstrap5',
+    # 'render.apps.RenderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,33 +120,33 @@ WSGI_APPLICATION = 'studdybuddy.wsgi.application'
 
 import dj_database_url
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES['default'] = dj_database_url.config()
 
-if 'test' in sys.argv:
-    DATABASES = {
-        'default':{
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'd1od28ud62i4bm',
-            'USER': 'kuojeqdxyudxod',
-            'PASSWORD': '39e0adeb7d3d6624d058f5992414bfa2f26f5301f3bb3ed2d0aebe7c655c27be',
-            'HOST': 'ec2-23-23-181-251.compute-1.amazonaws.com',
-            'PORT': '5432',
-         }
-    }
+# if 'test' in sys.argv:
+#     DATABASES = {
+#         'default':{
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'd1od28ud62i4bm',
+#             'USER': 'kuojeqdxyudxod',
+#             'PASSWORD': '39e0adeb7d3d6624d058f5992414bfa2f26f5301f3bb3ed2d0aebe7c655c27be',
+#             'HOST': 'ec2-23-23-181-251.compute-1.amazonaws.com',
+#             'PORT': '5432',
+#          }
+#     }
 
 
 
